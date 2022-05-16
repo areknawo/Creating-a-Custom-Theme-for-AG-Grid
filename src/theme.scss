@@ -1,0 +1,32 @@
+@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+@import "../node_modules/ag-grid-community/src/styles/ag-theme-material/sass/ag-theme-material-mixin";
+
+.ag-theme-custom {
+  .ag-root-wrapper {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  @include ag-theme-material(
+    (
+      background-color: #333,
+      header-background-color: #e65100,
+      foreground-color: #fff,
+      secondary-foreground-color: #eee,
+      row-hover-color: #444,
+    )
+  );
+  .ag-header-cell-text {
+    font-style: italic;
+    overflow: visible;
+  }
+  .ag-row-even {
+    @include ag-color-property(background-color, foreground-color);
+    @include ag-color-property(color, background-color);
+    .ag-icon {
+      @include ag-color-property(color, background-color);
+    }
+    &:hover {
+      background-color: #eee;
+    }
+  }
+}
